@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={cn("w-screen overflow-x-hidden", poppins.className)}>{children}</body>
+      <body className={cn("w-full overflow-x-hidden", poppins.className)}>{children}</body>
     </html>
   );
 }

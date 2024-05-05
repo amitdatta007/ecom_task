@@ -16,6 +16,10 @@
   --paragraph: #5a5a5a;
 }
 
+::selection{
+  @apply bg-primary text-white
+}
+
 body{
   @apply text-black
 }

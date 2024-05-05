@@ -2,14 +2,18 @@
 
 import { cn } from "@/utils/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
-const NavLink = ({ children, activeClassName, href, exact, ...props }) => {
+
+const NavLink = ({ children, activeClassName, href, exact, data, ...props }) => {
     const path = usePathname();
-    const active = exact ? path === href : path.startsWith(href);
+    const searchParams = useSearchParams()
+    const catagory = searchParams.get('catagory')
+
+    const active = (exact ? path === href : path.startsWith(href)) || (catagory === data);
     const classes = cn(props.className, active && activeClassName);
 
-    if(classes){
+    if (classes) {
         props.className = classes;
     }
 

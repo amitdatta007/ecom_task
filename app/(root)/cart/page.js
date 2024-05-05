@@ -1,8 +1,10 @@
+import CartFooter from "@/components/cart/CartFooter";
+
 const CartPage = () => {
     return (
-        <div>
-            cart
-        </div>
+        <>
+            <CartFooter />
+        </>
     );
 };
 
