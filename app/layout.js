@@ -1,8 +1,9 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/utils/utils";
+import Providers from "@/components/Providers";
 
-const poppins = Poppins({ subsets: ["latin"], weight: [ "400", "500", "600", "700" ] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -12,7 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={cn("w-full overflow-x-hidden", poppins.className)}>{children}</body>
+      <body className={cn("w-full overflow-x-hidden", poppins.className)}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }

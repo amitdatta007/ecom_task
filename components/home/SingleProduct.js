@@ -1,9 +1,15 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaCartPlus } from "react-icons/fa";
 import productImg from '@/assets/pr-3.png';
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/lib/features/cart/cartSlice";
 
 const SingleProduct = ({ product }) => {
+    const dispatch = useDispatch();
+
     return (
         <div
             key={product.map}
@@ -21,7 +27,10 @@ const SingleProduct = ({ product }) => {
                     <span className="text-xs font-medium text-paragraph line-through">ট{product.oldPrice.toFixed(2)}</span>
                 </div>
             </div>
-            <button className="bg-primary w-full text-white font-medium text-[13px] leading-[27px] py-1 px-2 flex justify-center items-center gap-1">
+            <button
+                className="bg-primary w-full text-white font-medium text-[13px] leading-[27px] py-1 px-2 flex justify-center items-center gap-1"
+                onClick={() => dispatch(addToCart(product))}
+            >
                 <FaCartPlus className="w-4 h-4 mb-[2px]" />
                 Add To Cart
             </button>

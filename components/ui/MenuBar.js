@@ -4,7 +4,7 @@ import NavLink from "./NavLink";
 
 const MenuBar = () => {
     return (
-        <section className="fixed bg-white w-full bottom-0 shadow-[0_0px_10px_rgb(0,0,0,0.1)] rounded-t-2xl">
+        <section className="fixed z-20 bg-white w-full bottom-0 shadow-[0_0px_10px_rgb(0,0,0,0.1)] rounded-t-2xl">
             <div className="px-3 sm:px-0 w-full max-w-[532px] md:max-w-[712px] lg:max-w-[952px] xl:max-w-[1132px] 2xl:max-w-[1332px] mx-auto flex justify-between">
                 <NavLink
                     href='/'
